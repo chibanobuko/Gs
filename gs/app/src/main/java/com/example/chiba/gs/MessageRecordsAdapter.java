@@ -175,7 +175,7 @@ public class MessageRecordsAdapter extends ArrayAdapter<MessageRecord> {
         }else{
             holder.labelText.setBackgroundColor(Color.parseColor("#fff"));
         }*/
-Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.item_motion);
+        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.item_motion);
         // リストアイテムのアニメーションを開始
         convertView.startAnimation(anim);
 
