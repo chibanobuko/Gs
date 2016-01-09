@@ -17,9 +17,9 @@
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="1"
+        android:autoLink="web"
         android:textAppearance="?android:textAppearanceLarge"
         tools:text="comment"
-        android:textColor="#fff"
-        android:background="#aa0000"
+        android:textColor="#000"
         android:id="@+id/text1"/>
 </LinearLayout>

@@ -4,9 +4,12 @@ package com.example.chiba.gs;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -57,6 +60,8 @@ public class MainActivity extends Activity {
 
     //アダプタークラスです。
     private MessageRecordsAdapter mAdapter;
+    private final MainActivity self = this;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     //起動時にOSから実行される関数です。
     @Override
@@ -75,12 +80,24 @@ public class MainActivity extends Activity {
 
         // Adapterのインスタンス化
         // 第三引数にlabelListを渡す
+//2015/12/26
+        // SwipeRefreshLayoutの設定
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
+        mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+        mSwipeRefreshLayout.setColorScheme(R.color.red, R.color.green, R.color.blue, R.color.yellow);
+
+        // ListViewにデータをセットする
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(self, R.array.array1, android.R.layout.simple_list_item_1);
+        ListView listView = (ListView) findViewById(R.id.mylist);
+        listView.setAdapter(adapter);
+
 
         //アダプターを作成します。newでクラスをインスタンス化しています。
         mAdapter = new MessageRecordsAdapter(this);
 
         //ListViewのViewを取得
-        ListView listView = (ListView) findViewById(R.id.mylist);
+//2015/12/26
+
         //ListViewにアダプターをセット。
         listView.setAdapter(mAdapter);
 
@@ -137,7 +154,8 @@ public class MainActivity extends Activity {
             //jsonの値を取得します。
             String title = jsonMessage.getString("comment");
             String url = jsonMessage.getString("imageUrl");
-           // String shosai = jsonMessage.getString("shosai");
+
+
             //jsonMessageを新しく作ります。
             MessageRecord record = new MessageRecord(url, title );
             //MessageRecordの配列に追加します。
@@ -146,6 +164,21 @@ public class MainActivity extends Activity {
 
         return records;
     }
+//2015/12/26
+    private SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            // 3秒待機
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+            }, 3000);
+        }
+
+    };
+//2015/12/26
 
     //デフォルトで作成されたメニューの関数です。未使用。
     @Override
