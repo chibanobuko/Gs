@@ -8,6 +8,7 @@ public class MessageRecord {
     private String imageUrl;
     private String comment;
 
+
     /*//データを１つ作成する関数です。項目が増えたら増やしましょう。
     public MessageRecord(String imageUrl, String comment) {
         this.imageUrl = imageUrl;
@@ -21,14 +22,13 @@ public class MessageRecord {
         return imageUrl;
     }*/
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-    public String getComment() {
-        return comment;
-    }
+    public String getImageUrl() { return imageUrl; }
+    public String getComment() { return comment; }
+
+
     public MessageRecord(String imageUrl, String comment) {
         this.imageUrl = imageUrl;
         this.comment = comment;
+
     }
 }
