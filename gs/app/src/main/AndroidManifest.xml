@@ -3,6 +3,10 @@
     package="com.example.chiba.gs">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+>>>>>>> User
 
     <application
         android:name=".VolleyApplication"
@@ -18,7 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".WebActivity"></activity>
+=======
+        <activity android:name=".WebActivity" />
+        <activity android:name=".UserActivity" />
+        <activity android:name=".NewUserActivity"></activity>
+>>>>>>> User
     </application>
 
 </manifest>

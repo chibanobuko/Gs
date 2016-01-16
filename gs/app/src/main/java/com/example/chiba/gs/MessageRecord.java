@@ -12,6 +12,7 @@ public class MessageRecord {
     private String ingredients;
     private String price;
 
+
     /*//データを１つ作成する関数です。項目が増えたら増やしましょう。
     public MessageRecord(String imageUrl, String comment) {
         this.imageUrl = imageUrl;
@@ -26,6 +27,7 @@ public class MessageRecord {
     }*/
 
     public String getImageUrl() { return imageUrl; }
+<<<<<<< HEAD
     public String getComment() { return comment; }/*
     public String getStartDate() { return startDate; }
     public String getEndDate() { return endDate; }
@@ -42,7 +44,14 @@ public class MessageRecord {
     }*/
 
     public MessageRecord(String imageUrl, String comment ) {
+=======
+    public String getComment() { return comment; }
+
+
+    public MessageRecord(String imageUrl, String comment) {
+>>>>>>> User
         this.imageUrl = imageUrl;
         this.comment = comment;
+
     }
 }

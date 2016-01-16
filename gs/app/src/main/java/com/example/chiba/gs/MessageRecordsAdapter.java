@@ -94,14 +94,15 @@ public class MessageRecordsAdapter extends ArrayAdapter<MessageRecord> {
         //キャッシュメモリを確保して画像を取得するクラスを作成。これを使って画像をダウンロードする。Volleyの機能
         mImageLoader = new ImageLoader(VolleyApplication.getInstance().getRequestQueue(), new BitmapLruCache());
     }
+
     //表示するViewを返します。これがListVewの１つのセルとして表示されます。表示されるたびに実行されます。
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-         ViewHolder holder;
+        ViewHolder holder;
 
 
         //convertViewをチェックし、Viewがないときは新しくViewを作成します。convertViewがセットされている時は未使用なのでそのまま再利用します。メモリーに優しい。
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.message_item, parent, false);
         }
 
@@ -153,13 +154,18 @@ public class MessageRecordsAdapter extends ArrayAdapter<MessageRecord> {
             }
         });
         //webリンクを制御するプログラムはここまで
+<<<<<<< HEAD
 //2015/12/26
+=======
+
+        //2015/12/26プルダウン
+>>>>>>> User
 
         //表示するセルの位置からデータをMessageRecordのデータを取得します。
         MessageRecord imageRecord = getItem(position);
 
-            // テキストビューにラベルをセット
-            holder.imageText.setImageUrl(imageRecord.getImageUrl(),mImageLoader);
+        // テキストビューにラベルをセット
+        holder.imageText.setImageUrl(imageRecord.getImageUrl(), mImageLoader);
         holder.labelText.setText(imageRecord.getComment());
 
 
@@ -169,12 +175,22 @@ public class MessageRecordsAdapter extends ArrayAdapter<MessageRecord> {
         textView.setText(imageRecord.getComment());
 
 
+<<<<<<< HEAD
  // 行毎に背景色を変える
        /* if(position%2==0){
             holder.labelText.setBackgroundColor(Color.parseColor("#fff"));
         }else{
             holder.labelText.setBackgroundColor(Color.parseColor("#fff"));
         }*/
+=======
+        // 行毎に背景色を変える
+        /*if(position%2==0){
+            holder.labelText.setBackgroundColor(Color.parseColor("#aa0000"));
+        }else{
+            holder.labelText.setBackgroundColor(Color.parseColor("#880000"));
+        }*/
+
+>>>>>>> User
         Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.item_motion);
         // リストアイテムのアニメーションを開始
         convertView.startAnimation(anim);
@@ -182,12 +198,13 @@ public class MessageRecordsAdapter extends ArrayAdapter<MessageRecord> {
         //1つのセルのViewを返します。
         return convertView;
     }
+
     //データをセットしなおす関数
     public void setMessageRecords(List<MessageRecord> objects) {
         //ArrayAdapterを空にする。
         clear();
         //テータの数だけMessageRecordを追加します。
-        for(MessageRecord object : objects) {
+        for (MessageRecord object : objects) {
             add(object);
         }
         //データの変更を通知します。

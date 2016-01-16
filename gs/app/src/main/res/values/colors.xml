@@ -15,5 +15,9 @@
     <color name="ivory">#EEEEE0</color>
     <color name="orange">#FF9900</color>
     <color name="brown">#CC9900</color>
+<<<<<<< HEAD
     <array name="array1">Apple</array>
+=======
+    <array name="array1">array</array>
+>>>>>>> User
 </resources>
