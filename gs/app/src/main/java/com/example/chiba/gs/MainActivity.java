@@ -115,27 +115,26 @@ public class MainActivity extends ActionBarActivity {
                 labelList.add("List Item "+i);
             }*/
 
-<<<<<<< HEAD
+
         //ListViewのViewを取得
 //2015/12/26
 
         //ListViewにアダプターをセット。
         listView.setAdapter(mAdapter);
-=======
+
             // Adapterのインスタンス化
             // 第三引数にlabelListを渡す
             //2015/12/26プルダウンSwipeRefreshLayoutの設定
             mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
             mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
             mSwipeRefreshLayout.setColorScheme(R.color.red, R.color.green, R.color.blue, R.color.yellow);
->>>>>>> User
+
 
             // ListViewにデータをセットする
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(self, R.array.array1, android.R.layout.simple_list_item_1);
             ListView listView = (ListView) findViewById(R.id.mylist);
             listView.setAdapter(adapter);
 
-<<<<<<< HEAD
     }
     //自分で作った関数です。一覧のデータを作成して表示します。
     private void fetch() {
