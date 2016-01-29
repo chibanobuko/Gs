@@ -121,7 +121,7 @@ public class MainActivity extends ActionBarActivity {
             //ListViewにアダプターをセット。
             listView.setAdapter(mAdapter);
 
-           listView.setDivider(null);
+            listView.setDivider(null);
             //一覧のデータを作成して表示します。
             fetch();
 
@@ -233,6 +233,18 @@ public class MainActivity extends ActionBarActivity {
                     return true;
                 }
                     //Userで追加ここまで
+					
+					//Postで追加ここから
+					//投稿処理
+					if (id == R.id.post) {
+						//投稿画面に遷移
+						// Intent のインスタンスを取得する。getApplicationContext()でViewの自分のアクティビティーのコンテキストを取得。遷移先のアクティビティーを.classで指定
+						Intent intent = new Intent(getApplicationContext(), PostActivity.class);
+						// 遷移先の画面を呼び出す
+						startActivity(intent);
+						return true;
+					}
+					//Postで追加ここまで
 
 
                     return super.onOptionsItemSelected(item);
