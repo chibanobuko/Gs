@@ -21,5 +21,16 @@
     <string name="sinki">sinki</string>
     <string name="back">Back</string>
     <!-- Userで追加ここまで-->
+<<<<<<< HEAD
 >>>>>>> User
+=======
+	
+	<!-- Postで追加ここから-->
+    <string name="attach_button">ImageAttach</string>
+    <string name="attach_camera_button">CameraAttach</string>
+    <string name="post_button">Post</string>
+    <string name="no_data_message">No Data</string>
+    <!-- Postで追加ここまで-->
+	
+>>>>>>> Post1
 </resources>

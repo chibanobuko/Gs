@@ -6,8 +6,12 @@
 <<<<<<< HEAD
 =======
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
 >>>>>>> User
 
+=======
+	<uses-permission android:name="android.permission.CAMERA" />
+>>>>>>> Post1
     <application
         android:name=".VolleyApplication"
         android:allowBackup="true"
@@ -27,8 +31,13 @@
 =======
         <activity android:name=".WebActivity" />
         <activity android:name=".UserActivity" />
+<<<<<<< HEAD
         <activity android:name=".NewUserActivity"></activity>
 >>>>>>> User
+=======
+        <activity android:name=".NewUserActivity" />
+        <activity android:name=".PostActivity"></activity>
+>>>>>>> Post1
     </application>
 
 </manifest>
